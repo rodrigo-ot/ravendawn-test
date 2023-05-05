@@ -1,10 +1,10 @@
+local function releaseStorage(player)
+    player:setStorageValue(1000, -1)
+end
 function onLogout(player)
-    local function releaseStorage()
-        player:setStorageValue(1000, -1)
-    end
-
     if player:getStorageValue(1000) ~= -1 then
-        releaseStorage()
+        --removed addEvent because player would be offline when it executes
+        releaseStorage(player)
     end
     return true
 end

@@ -1,5 +1,8 @@
 void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 {
+    /* changed the player pointer to a smart pointer to 
+        avoid having to write "delete player" in every return case.*/
+
     std::unique_ptr<Player> player(g_game.getPlayerByName(recipient));
     if (!player) {
         player.reset(new Player(nullptr));
@@ -10,7 +13,6 @@ void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 
     Item* item = Item::CreateItem(itemId);
     if (!item) {
-        delete player;
         return;
     }
 
