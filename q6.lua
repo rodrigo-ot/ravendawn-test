@@ -1,4 +1,4 @@
-local DIST = 3 -- maximum distance to walk
+local DIST = 3 -- maximum distance to walk ex: dist =3, means 3 sqm intant teleport + 3 individual teleports
 local INTERVAL = 50 -- interval between teleportations
 local dir = { -- directional vectors
 	[0] = {x =0, y = -1, z=0},
